@@ -43,6 +43,24 @@ public final class PhoneLocation {
         return _location;
     }
 
+    /**
+     * Get City Name
+     * @param num
+     * @return
+     */
+    public static String getCityFromPhone(String num) {
+        return _getPosFromPhone(num, 1);
+    }
+
+    /**
+     * Get Code
+     * @param num
+     * @return
+     */
+    public static String getCodeFromPhone(String num) {
+        return _getPosFromPhone(num, 0);
+    }
+
     private static String _getPosFromPhone(String num, int i) {
         String s = getLocationFromPhone(num);
         String[] loc = null;
@@ -59,22 +77,10 @@ public final class PhoneLocation {
         return null;
     }
 
-    /**
-     * Get City Name
-     * @param num
-     * @return
-     */
-    public static String getCityFromPhone(String num) {
-        return _getPosFromPhone(num, 1);
-    }
-
-    public static String getCodeFromPhone(String num) {
-        return _getPosFromPhone(num, 0);
-    }
-
     static native String getPhoneLocationJni(String num);
 
     static {
         System.loadLibrary("phoneloc-jni");
     }
 }
+
