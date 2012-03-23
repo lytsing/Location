@@ -63,15 +63,9 @@ public final class PhoneLocation {
 
     private static String _getPosFromPhone(String num, int i) {
         String s = getLocationFromPhone(num);
-        String[] loc = null;
-
-        // TODO: code review
-        if (s != null) {
-            loc = s.split(",");
-
-            if (loc.length == 2) {
-                return loc[i];
-            }
+        String[] loc = (s != null) ? s.split(",") : new String[0];
+        if (loc.length == 2) {
+            return loc[i];
         }
 
         return null;
