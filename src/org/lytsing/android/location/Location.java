@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 TLysting Huang http://lytsing.org
+ * Copyright (C) 2011 Lytsing Huang http://lytsing.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public class Location extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main);
         
         TextView t = (TextView)findViewById(R.id.location);

@@ -18,9 +18,9 @@ package com.android.phone.location;
 
 public final class PhoneLocation {
 
-    private static String _location;
+    private static String sLocation;
 
-    private static String _phone;
+    private static String sPhone;
 
     /**
      * Get Location, format: 0755,广东深圳
@@ -33,14 +33,14 @@ public final class PhoneLocation {
             return null;
         }
 
-        if (num.equals(_phone)) {
-            return _location;
+        if (num.equals(sPhone)) {
+            return sLocation;
         }
 
-        _phone = num;
-        _location = getPhoneLocationJni(num);
+        sPhone = num;
+        sLocation = getPhoneLocationJni(num);
 
-        return _location;
+        return sLocation;
     }
 
     /**
